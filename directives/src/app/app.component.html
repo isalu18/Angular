@@ -1,0 +1,6 @@
+<!-- <router-outlet></router-outlet> -->
+<div *ngIf="canShow">
+    <h1 [ngClass]="{'clase1' : canShow }">Hola</h1>
+</div>
+<p *ngFor="let elemento of ar"> {{elemento}} </p>
+<p *ngFor="let i of objetos"> Nombre: {{i.name}} ID: {{i.id}} </p>
