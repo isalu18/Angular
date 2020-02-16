@@ -1,0 +1,48 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Logo</a>
+    </div>
+</nav>
+
+<h1 class="centrar">Siguiente actividad a trabajar:</h1>
+
+<p class="centrar"> {{ elegidaActividad || 'Da click en el boton de iniciar' }}</p>
+
+<p align="center"><a (click)="elegirActividad()" class="waves-effect waves-light btn">Iniciar</a></p>
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large blue">
+        <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating modal-trigger" href="#modal1" (click)="agregarActividades()"><i class="material-icons">add</i></a></li>
+        <li><a class="btn-floating" (click)="mostrarActividades()"><i class="material-icons">remove_red_eye</i></a></li>
+    </ul>
+</div>
+
+<!-- Modal Structure -->
+<div id="mostrarActModal" class="modal">
+    <div class="modal-content">
+        <h4>Todas las actividades...</h4>
+
+        <ul class="collection">
+            <li class="collection-item" *ngFor="let actividad of actividades"> {{ actividad }}</li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="agregarActModal" class="modal">
+    <div class="modal-content">
+        <h4>Agregar actividad</h4>
+        <input type="text" placeholder="Escribe el elemento" #myInput name="myInput">
+
+    </div>
+    <div class="modal-footer">
+        <a href="#!" (click)="borrarInput(myInput)" class="modal-close waves-effect waves-green btn-flat btn-cancelar">Cancelar</a>
+        <a href="#!" (click)="agregando(myInput); borrarInput(myInput)" class="modal-close waves-effect waves-green btn-flat btn-agregar">Agregar</a>
+    </div>
+</div>
