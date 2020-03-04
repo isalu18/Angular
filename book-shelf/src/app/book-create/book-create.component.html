@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col s12">
+        <h1>Agrega tu nuevo Libro</h1>
+    </div>
+</div>
+
+<div class="row">
+    <form class="col s12" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="id" id="bookId" type="text" class="validate">
+                <label for="bookId">ID</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="titulo" id="titulo" type="text" class="validate">
+                <label for="titulo">Titulo</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="autor" id="autor" type="text" class="validate">
+                <label for="autor">Autor</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="descripcion" id="descripcion" type="text" class="validate">
+                <label for="descripcion">Descripcion</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="coverUrl" id="coverUrl" type="text" class="validate">
+                <label for="coverUrl">Cover URL</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <button class="waves-effect waves-light btn-large">Crear</button>
+            </div>
+        </div>
+    </form>
+</div>
